@@ -23,7 +23,7 @@ class App extends React.Component {
     return (
       <>
         <Busca onBuscaRealizada={this.onBuscaRealizada} />
-        <LocalidadeLista />
+        <LocalidadeLista ceps={this.state.ceps}/>
       </>
     );
   }
