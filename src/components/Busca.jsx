@@ -15,7 +15,15 @@ export default class Busca extends Component {
 
   onFormSubmit = (event) => {
     event.preventDefault();
-    window.alert(this.state.termoDeBusca);
+    const { termoDeBusca } = this.state;
+
+    const somenteNumerosOitoDigitos = /^\d{8}$/;
+
+    if (somenteNumerosOitoDigitos.test(termoDeBusca)) {
+      this.props.onBuscaRealizada(termoDeBusca);
+    } else {
+      window.alert("O cep deve possuir exatamente 8 números!");
+    }
   };
 
   render() {
