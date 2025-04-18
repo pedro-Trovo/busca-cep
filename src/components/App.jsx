@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import Busca from './Busca'
 
 function App() {
   return (
-    <p>Hello, P1</p>
+    <Busca />
   )
 }
 
