@@ -1,9 +1,10 @@
-import Busca from './Busca'
+import Busca from "./Busca";
+import React from "react";
 
-function App() {
-  return (
-    <Busca />
-  )
+class App extends React.Component {
+  render() {
+    return <Busca />;
+  }
 }
 
-export default App
+export default App;
