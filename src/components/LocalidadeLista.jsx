@@ -20,24 +20,13 @@ const localidadesFicticias = [
 
 export default function LocalidadeLista() {
   return (
-    <div className="flex flex-column">
+    <div className="flex flex-column gap-2 mt-2 align-items-start">
       {localidadesFicticias.map((loc, index) => (
         <Card
           key={index}
-          className="card"
-          style={{
-            marginTop : "0.5rem",
-            border: "solid black",
-            borderRadius: "1rem",
-            textAlign: "center",
-            fontSize: "1rem",
-            lineHeight: "1.8rem",
-            padding: "1.5rem",
-            marginBottom : "0.5rem",
-            width : "30.5rem",
-          }}
+          className="w-20rem border-2 border-round-xl border-900 text-center p-2"
         >
-          <div >{loc.cep}</div>
+          <div>{loc.cep}</div>
           <div>{loc.logradouro}</div>
           <div>{loc.bairro}</div>
           <div>
