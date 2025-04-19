@@ -22,7 +22,7 @@ export default class Busca extends Component {
   render() {
     return (
       <form onSubmit={this.onFormSubmit}>
-        <div className="flex flex-column">
+        <div className="flex flex-column gap-2">
           <IconField iconPosition="left">
             <InputIcon className="pi pi-search"></InputIcon>
             <InputText
@@ -42,5 +42,5 @@ export default class Busca extends Component {
 }
 
 Busca.defaultProps = {
-  dica: "Buscar algo...",
+  dica: "Buscar cep...",
 };

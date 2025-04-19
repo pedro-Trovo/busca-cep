@@ -2,12 +2,14 @@ import Busca from "./Busca";
 import React from "react";
 import viacepClient from "../utils/viacepClient";
 import LocalidadeLista from "./LocalidadeLista";
+import Grafico from "./Grafico";
 
 class App extends React.Component {
   viacepClient = null;
 
   state = {
     ceps: [],
+    graficoEstados: [],
   };
 
   onBuscaRealizada = (termo) => {
@@ -21,6 +23,11 @@ class App extends React.Component {
 
         this.setState((prevState) => ({
           ceps: [result.data, ...prevState.ceps],
+          graficoEstados: {
+            ...prevState.graficoEstados,
+            [result.data.estado]:
+              (prevState.graficoEstados[result.data.estado] || 0) + 1,
+          },
         }));
       })
       .catch(() => {
@@ -30,10 +37,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
-        <Busca onBuscaRealizada={this.onBuscaRealizada} />
-        <LocalidadeLista ceps={this.state.ceps} />
-      </>
+      <div className="flex mt-8	justify-content-center gap-6">
+        <div className="col-3 flex flex-column gap-4">
+          <Busca onBuscaRealizada={this.onBuscaRealizada} />
+          <LocalidadeLista ceps={this.state.ceps} />
+        </div>
+        <div className="col-3 mt-8">
+          <Grafico graficoEstados={this.state.graficoEstados} />
+        </div>
+      </div>
     );
   }
 }
