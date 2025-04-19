@@ -11,19 +11,28 @@ class App extends React.Component {
   };
 
   onBuscaRealizada = (termo) => {
-    viacepClient.get(`/${termo}/json`).then((result) => {
-      this.setState((prevState) => ({
-        ceps: [result.data, ...prevState.ceps],
-      })),
-        console.log(result.data);
-    });
+    viacepClient
+      .get(`/${termo}/json`)
+      .then((result) => {
+        if (result.data.erro) {
+          alert("CEP não encontrado.");
+          return;
+        }
+
+        this.setState((prevState) => ({
+          ceps: [result.data, ...prevState.ceps],
+        }));
+      })
+      .catch(() => {
+        alert("Erro ao buscar o CEP. Tente novamente.");
+      });
   };
 
   render() {
     return (
       <>
         <Busca onBuscaRealizada={this.onBuscaRealizada} />
-        <LocalidadeLista ceps={this.state.ceps}/>
+        <LocalidadeLista ceps={this.state.ceps} />
       </>
     );
   }
