@@ -16,14 +16,7 @@ export default class Busca extends Component {
   onFormSubmit = (event) => {
     event.preventDefault();
     const { termoDeBusca } = this.state;
-
-    const somenteNumerosOitoDigitos = /^\d{8}$/;
-
-    if (somenteNumerosOitoDigitos.test(termoDeBusca)) {
-      this.props.onBuscaRealizada(termoDeBusca);
-    } else {
-      window.alert("O cep deve possuir exatamente 8 números!");
-    }
+    this.props.onBuscaRealizada(termoDeBusca);
   };
 
   render() {
@@ -33,6 +26,8 @@ export default class Busca extends Component {
           <IconField iconPosition="left">
             <InputIcon className="pi pi-search"></InputIcon>
             <InputText
+              maxLength="8"
+              keyfilter="int"
               className="w-full"
               placeholder={this.props.dica}
               onChange={this.onTermoAlterado}
