@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "primereact/card";
 
-export default function LocalidadeLista({ ceps }) {
+const LocalidadeLista = ({ ceps }) => {
   if (!ceps || ceps.length === 0) return null;
   return (
     <div className="flex flex-column gap-2 mt-2 align-items-start w-full">
@@ -21,3 +21,5 @@ export default function LocalidadeLista({ ceps }) {
     </div>
   );
 }
+
+export default LocalidadeLista
