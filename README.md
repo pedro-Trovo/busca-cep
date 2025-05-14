@@ -1,14 +1,20 @@
+<h1>Busca CEP</h1> 
+
+### Tópicos 
+
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Tecnologias](#tecnologias)
+- [Contribuidores](#contribuidores)
+- [Pré-requisitos](#pré-requisitos)
+- [Inicializando o Projeto](#inicializando-o-projeto)
+- [Imagens do Projeto](#imagens-do-projeto)
+
 # Sobre o Projeto
 Este projeto foi elaborado para a matéria de Programação para Dispositivos Móveis, e se trata de uma aplicação web onde o usuário pode buscar endereços reais informando um CEP.
 
 # Tecnologias
 Este projeto utiliza a biblioteca **React**, com o empacotador **Vite**, para criar uma aplicação web leve e rápida. A interface foi construída com componentes do **PrimeReact** e estilizada com **PrimeFlex**. As requisições para busca de CEPs são feitas com a biblioteca **Axios**, utilizando a API pública do [ViaCEP](https://viacep.com.br/) para obter os dados em tempo real.
 <table align="center">
-    <tr>
-        <th></th>
-        <th>
-        </th>
-    </tr>
     <tr>
         <th>
             Linguagens
@@ -70,8 +76,8 @@ http://localhost:5173/
 <br><br>
 
 # Imagens do Projeto
-## Tela Inicial
+## Estado da tela ao iniciar o projeto
 <img alt="Tela Inicial" src="readme-imgs/Inicializacao.png">
 
-## Tela de Resultados
+## Estado da tela ao realizar buscas por CEPs
 <img alt="Tela de Resultados" src="readme-imgs/Resultados.png">
